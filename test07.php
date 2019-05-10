@@ -51,10 +51,8 @@ echo $car3->getHPS();
 print_r($car3);
 
 echo '<pre>';
-$car4 = new Peugeot('3008','AE9999AE', 'France', '250');//исп. конструктор класса Vehicle
-$car4->setMod('Peugeot 3008')->setNum('AE9999AE')->setCntr('France')->setSp('250');
-echo '<pre>';
-$car4->setEPS('4007 YQ');
+$car4 = new Peugeot();//исп. конструктор класса Vehicle
+$car4->setMod('Peugeot 3008')->setNum('AE9999AE')->setCntr('France')->setSp('250')->setEPS('4007 YQ');
 echo 'IV) car-4, getVehicle = '.$car4->getVehicle();
 echo $car4->getEPS();
 print_r($car4);
