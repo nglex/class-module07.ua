@@ -43,9 +43,7 @@ echo 'II) car-2, getVehicle = '.$car2->getVehicle();
 
 echo '<pre>';
 $car3 = new Mercedes();//исп. конструктор класса Vehicle
-$car3->setMod('Mercedes GL-500')->setNum('AE6215AI')->setCntr('Germany')->setSp('300');
-echo '<pre>';
-$car3->setHPS('A 001 466 13 01');
+$car3->setMod('Mercedes GL-500')->setNum('AE6215AI')->setCntr('Germany')->setSp('300')->setHPS('A 001 466 13 01');
 echo 'III) car-3, getVehicle = '.$car3->getVehicle();
 echo $car3->getHPS();
 print_r($car3);
