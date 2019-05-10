@@ -4,11 +4,11 @@ class Vehicle{ // создаем общий класс Vehicle (транспор
 	private $number;
 	private $country;
 	private $speed;
-	public function __construct($mod, $num, $cntr, $sp){
-		$this->model = $mod;
-		$this->number = $num;
-		$this->country = $cntr;
-		$this->speed = $sp;
+	public function __construct(){
+		$this->model;
+		$this->number;
+		$this->country;
+		$this->speed;
 	}
 	public function setMod($mod){$this->model = $mod; return $this;}
 	public function setNum($num){$this->number = $num; return $this;}
@@ -21,25 +21,18 @@ class Vehicle{ // создаем общий класс Vehicle (транспор
 
 class Mercedes extends Vehicle{//в класс Mercedes наследуем общие свойства класса Vehicle
 	private $HPS; //создаем уникальное свойство класса Mercedes - HPS (гидроусилитель)
-	public function setHPS($brand){
-		$this->HPS = $brand;
-	}
-	public function getHPS(){
-		return '5) ГУР: '.$this->HPS;
-	}
+	public function setHPS($brand){$this->HPS = $brand;}
+	public function getHPS(){return '5) ГУР: '.$this->HPS;}
 }
 
 class Peugeot extends Vehicle{//в класс Peugeot наследуем общие свойства класса Vehicle
 	private $EPS; //создаем уникальное свойство класса Peugeot - EPS (электроусилитель)
-	public function setEPS($brand){
-		$this->EPS = $brand;
-	}
-	public function getEPS(){
-		return '5) ЭУР: '.$this->EPS;
-	}
+	public function setEPS($brand){$this->EPS = $brand;}
+	public function getEPS(){return '5) ЭУР: '.$this->EPS;}
 }
 
-$car1 = new Vehicle('Peugeot 107','AE4577HE', 'France', '160');//создаем переменную
+$car1 = new Vehicle();//создаем переменную
+$car1->setMod('Peugeot 107')->setNum('AE4577HE')->setCntr('France')->setSp('160');
 echo '<pre>';
 echo 'I) car-1, getVehicle = '.$car1->getVehicle();
 
@@ -49,16 +42,20 @@ $car2->setMod('Peugeot 301')->setNum('AE3921HK')->setCntr('France')->setSp('200'
 echo 'II) car-2, getVehicle = '.$car2->getVehicle();
 
 echo '<pre>';
-$car3 = new Mercedes('GL-500','AE6215AI', 'Germany', '300');//исп. конструктор класса Vehicle
+$car3 = new Mercedes();//исп. конструктор класса Vehicle
+$car3->setMod('Mercedes GL-500')->setNum('AE6215AI')->setCntr('Germany')->setSp('300');
 echo '<pre>';
 $car3->setHPS('A 001 466 13 01');
 echo 'III) car-3, getVehicle = '.$car3->getVehicle();
 echo $car3->getHPS();
+print_r($car3);
 
 echo '<pre>';
 $car4 = new Peugeot('3008','AE9999AE', 'France', '250');//исп. конструктор класса Vehicle
+$car4->setMod('Peugeot 3008')->setNum('AE9999AE')->setCntr('France')->setSp('250');
 echo '<pre>';
 $car4->setEPS('4007 YQ');
 echo 'IV) car-4, getVehicle = '.$car4->getVehicle();
 echo $car4->getEPS();
+print_r($car4);
 ?>
